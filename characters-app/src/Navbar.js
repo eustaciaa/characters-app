@@ -15,12 +15,7 @@ export default function Navbar() {
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <CustomLink to="/all">All</CustomLink>
             <CustomLink to="/by-locations">By Location</CustomLink>
-            <CustomLink to="/by-episodes">By Episode</CustomLink>
           </ul>
-          {/* <form class="d-flex">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-            <button class="btn btn-outline-success" type="submit">Search</button>
-          </form> */}
         </div>
       </div>
     </nav>

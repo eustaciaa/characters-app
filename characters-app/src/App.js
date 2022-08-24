@@ -7,6 +7,7 @@ import All from './pages/All';
 import Locations from './pages/Locations';
 import Episodes from './pages/Episodes';
 import { Route, Routes } from "react-router-dom"
+import Character from './pages/Character';
 
 function App() {
   // return (
@@ -31,12 +32,12 @@ function App() {
   return (
     <div>
       <Navbar />
-      <div class="container">
+      <div class="container py-5">
         <Routes>
           <Route path="/" element={<All />}/>
           <Route path="/all" element={<All />}/>
           <Route path="/by-locations" element={<Locations />}/>
-          <Route path="/by-episodes" element={<Episodes />}/>
+          <Route path="/:id" render={(props) => <Character id={props.match.params.id} {...props} /> } element={<Character/>}/>
         </Routes>
       </div>
     </div>    
