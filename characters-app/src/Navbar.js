@@ -28,8 +28,6 @@ export default function Navbar() {
 }
 
 function CustomLink({ to, children, ...props }){
-  const path = window.location.path
-
   return (
     <li className="nav-item">
       <NavLink 
