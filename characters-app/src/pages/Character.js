@@ -30,7 +30,7 @@ class Character extends React.Component {
     // console.log(this.props.id)
     const { DataisLoaded, character } = this.state;
     if (!DataisLoaded) return <div>
-      <h1> Please wait some time.... </h1>
+      <h5><i class="fa fa-spinner fa-spin" aria-hidden="true"></i> Loading data.. </h5>
     </div>;
 
     console.log(character);

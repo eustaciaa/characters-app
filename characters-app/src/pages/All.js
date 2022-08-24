@@ -26,7 +26,7 @@ export default class All extends React.Component {
   render () {
     const { DataisLoaded, characters } = this.state;
     if (!DataisLoaded) return <div>
-      <h1> Please wait some time.... </h1>
+      <h5><i class="fa fa-spinner fa-spin" aria-hidden="true"></i>Loading data.. </h5>
     </div>;
 
     characters.map((character => (
