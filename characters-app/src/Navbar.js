@@ -5,7 +5,7 @@ export default function Navbar() {
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container-fluid">
         <NavLink to="/" className="navbar-brand">
-          Characters
+          Rick and Morty
         </NavLink>
         {/* <a class="navbar-brand" href="#">Characters</a> */}
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
@@ -13,8 +13,8 @@ export default function Navbar() {
         </button>
         <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <CustomLink to="/all">All</CustomLink>
-            <CustomLink to="/by-locations">By Location</CustomLink>
+            <CustomLink to="/characters">Characters</CustomLink>
+            <CustomLink to="/locations">Locations</CustomLink>
           </ul>
         </div>
       </div>

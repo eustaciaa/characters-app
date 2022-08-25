@@ -1,12 +1,13 @@
-export default function Card(item){
+import { NavLink } from "react-router-dom";
+
+export default function Card({ item, type }){
   return (
-    <div class="card col-md-3">
-      <img src="" class="card-img-top" alt="..."/>
+    <div class="card">
+      <img src={item.image} class="card-img-top" alt="..."/>
       <div class="card-body">
         <h5 class="card-title">{item.name}</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
+        <NavLink to={"/" + type + "/" + item.id} className="link-info">See {type}'s detail <i className="fa fa-external-link"></i></NavLink>              
       </div>
-    </div>    
+    </div>       
   )
 }

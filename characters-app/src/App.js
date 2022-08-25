@@ -1,13 +1,10 @@
-import logo from './logo.svg';
-
 import React from "react";
 import './App.css';
 import Navbar from './Navbar';
-import All from './pages/All';
 import Locations from './pages/Locations';
-import Episodes from './pages/Episodes';
 import { Route, Routes } from "react-router-dom"
 import Character from './pages/Character';
+import Characters from './pages/Characters';
 
 function App() {
   // return (
@@ -34,10 +31,10 @@ function App() {
       <Navbar />
       <div class="container py-5">
         <Routes>
-          <Route path="/" element={<All />}/>
-          <Route path="/all" element={<All />}/>
-          <Route path="/by-locations" element={<Locations />}/>
-          <Route path="/:id" render={(props) => <Character id={props.match.params.id} {...props} /> } element={<Character/>}/>
+          <Route path="/" element={<Characters />}/>
+          <Route path="/characters" element={<Characters />}/>
+          <Route path="/locations" element={<Locations />}/>
+          <Route path="/character/:id" render={(props) => <Character id={props.match.params.id} {...props} /> } element={<Character/>}/>
         </Routes>
       </div>
     </div>    
