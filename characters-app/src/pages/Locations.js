@@ -2,6 +2,7 @@ import DataTable from 'react-data-table-component';
 import React from "react";
 import Card from "../components/Card";
 import LoadingText from '../components/LoadingText';
+import { NavLink } from 'react-router-dom';
 
 export default class Locations extends React.Component {
 
@@ -27,6 +28,7 @@ export default class Locations extends React.Component {
   
   render () {
     const { DataisLoaded, locations } = this.state;
+
     if (!DataisLoaded) return <LoadingText />
 
     locations.map((location => (
@@ -39,20 +41,35 @@ export default class Locations extends React.Component {
           <h1>All Locations</h1>
         </div>
         <div class="row">
-          {locations.map((location) => (
-            <div class="p-3 col-md-3">
-              {/* <div class="card">
-                <img src={character.image} class="card-img-top" alt="..."/>
-                <div class="card-body">
-                  <h5 class="card-title">{character.name}</h5>
-                  <NavLink to={"/" + character.id} className="link-info">See character's detail <i className="fa fa-external-link"></i></NavLink>              
-                </div>
-              </div>               */}
-              {/* <Card type="character" item={character}/> */}
-            </div>
-          ))}
+          <DataTable 
+            columns={columns}
+            data={locations}
+            pagination  
+          />
         </div>
       </div>
     )
   }
 }
+
+const columns = [
+  {
+    name: "Name",
+    selector: row => row.name,
+    sortable: true
+  },
+  {
+    name: "Dimension",
+    selector: row => row.dimension,
+    sortable: true
+  },
+  {
+    name: "Type",
+    selector: row => row.type,
+    sortable: true
+  },
+  {
+    name: "Residents",
+    cell: row => <NavLink to={"/location/" + row.id} className="link-info">See residents <i className="fa fa-external-link"></i></NavLink>              
+  }
+]
