@@ -5,6 +5,7 @@ import Locations from './pages/Locations';
 import { Route, Routes } from "react-router-dom"
 import Character from './pages/Character';
 import Characters from './pages/Characters';
+import LocationResidents from "./pages/LocationResidents";
 
 function App() {
   // return (
@@ -32,9 +33,12 @@ function App() {
       <div class="container py-5">
         <Routes>
           <Route path="/" element={<Characters />}/>
+
           <Route path="/character" element={<Characters />}/>
-          <Route path="/location" element={<Locations />}/>
           <Route path="/character/:id" render={(props) => <Character id={props.match.params.id} {...props} /> } element={<Character/>}/>
+          
+          <Route path="/location" element={<Locations />}/>
+          <Route path="/location/:id" render={(props) => <LocationResidents id={props.match.params.id} {...props} /> } element={<LocationResidents/>}/>
         </Routes>
       </div>
     </div>    

@@ -40,13 +40,6 @@ export default class Characters extends React.Component {
         <div class="row">
           {characters.map((character) => (
             <div class="p-3 col-md-3">
-              {/* <div class="card">
-                <img src={character.image} class="card-img-top" alt="..."/>
-                <div class="card-body">
-                  <h5 class="card-title">{character.name}</h5>
-                  <NavLink to={"/" + character.id} className="link-info">See character's detail <i className="fa fa-external-link"></i></NavLink>              
-                </div>
-              </div>               */}
               <Card type="character" item={character}/>
             </div>
           ))}
