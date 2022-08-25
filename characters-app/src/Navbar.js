@@ -13,8 +13,8 @@ export default function Navbar() {
         </button>
         <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <CustomLink to="/characters">Characters</CustomLink>
-            <CustomLink to="/locations">Locations</CustomLink>
+            <CustomLink to="/character">Characters</CustomLink>
+            <CustomLink to="/location">Locations</CustomLink>
           </ul>
         </div>
       </div>

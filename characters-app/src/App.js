@@ -32,8 +32,8 @@ function App() {
       <div class="container py-5">
         <Routes>
           <Route path="/" element={<Characters />}/>
-          <Route path="/characters" element={<Characters />}/>
-          <Route path="/locations" element={<Locations />}/>
+          <Route path="/character" element={<Characters />}/>
+          <Route path="/location" element={<Locations />}/>
           <Route path="/character/:id" render={(props) => <Character id={props.match.params.id} {...props} /> } element={<Character/>}/>
         </Routes>
       </div>
