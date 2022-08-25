@@ -25,7 +25,7 @@ export default class Characters extends React.Component {
   
   render () {
     const { DataisLoaded, characters } = this.state;
-    if (!DataisLoaded) return <div>
+    if (!DataisLoaded) return <div class="d-flex justify-content-center">
       <h5><i class="fa fa-spinner fa-spin" aria-hidden="true"></i>Loading data.. </h5>
     </div>;
 
@@ -35,8 +35,8 @@ export default class Characters extends React.Component {
 
     return (
       <div class="col">
-        <div class="row mb-2">
-          <h2>All Characters</h2>
+        <div class="row mb-5 text-center">
+          <h1>All Characters</h1>
         </div>
         <div class="row">
           {characters.map((character) => (
