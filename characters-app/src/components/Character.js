@@ -1,5 +1,6 @@
 import React from "react"
 import { useLocation, useNavigate, useParams } from 'react-router-dom'
+import LoadingText from "./LoadingText";
 
 class Character extends React.Component {
 
@@ -29,9 +30,7 @@ class Character extends React.Component {
   render () {
     // console.log(this.props.id)
     const { DataisLoaded, character } = this.state;
-    if (!DataisLoaded) return <div>
-      <h5><i class="fa fa-spinner fa-spin" aria-hidden="true"></i> Loading data.. </h5>
-    </div>;
+    if (!DataisLoaded) return <LoadingText />
 
     console.log(character);
 

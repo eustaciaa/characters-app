@@ -1,5 +1,6 @@
 import React from "react";
 import Card from "./Card";
+import LoadingText from "./LoadingText";
 
 export default class Characters extends React.Component {
 
@@ -25,9 +26,7 @@ export default class Characters extends React.Component {
   
   render () {
     const { DataisLoaded, characters } = this.state;
-    if (!DataisLoaded) return <div class="d-flex justify-content-center">
-      <h5><i class="fa fa-spinner fa-spin" aria-hidden="true"></i>Loading data.. </h5>
-    </div>;
+    if (!DataisLoaded) return <LoadingText />
 
     characters.map((character => (
       console.log(character)
