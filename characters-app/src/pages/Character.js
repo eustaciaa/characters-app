@@ -1,5 +1,5 @@
 import React from "react"
-import { useLocation, useNavigate, useParams } from 'react-router-dom'
+import { NavLink, useLocation, useNavigate, useParams } from 'react-router-dom'
 import LoadingText from "../components/LoadingText";
 
 class Character extends React.Component {
@@ -32,33 +32,43 @@ class Character extends React.Component {
     const { DataisLoaded, character } = this.state;
     if (!DataisLoaded) return <LoadingText />
 
-    console.log(character);
+    let characterLocationId = character.location.url.split("/");
+    characterLocationId = characterLocationId[characterLocationId.length - 1];
 
     return (
       <div>
-        <div class="row mb-5">
+        <div class="row mb-5 text-md-start text-center">
           <h1>{character.name}'s Detail</h1>
         </div>
         <div class="row">
           <div class="col-md-4">
             <img src={character.image} class="d-block mx-auto mx-md-0" alt={character.name}/>
           </div>
-          <div class="col-md-8">
-            <dl>
-              <dt>Name</dt>
-              <dd>{character.name}</dd>
-              <dt>Species</dt>
-              <dd>{character.species}</dd>
-              <dt>Gender</dt>
-              <dd>{character.gender}</dd>
-              <dt>Status</dt>
-              <dd>{character.status}</dd>
-              <dt>Origin</dt>
-              <dd>{character.origin.name}</dd>
-              <dt>Location</dt>
-              <dd>{character.location.name}</dd>
-              
-            </dl>
+          <div class="col-md-8 text-md-start text-center mt-md-0 mt-5">
+            <div class="row">
+              <div class="col-12 col-md-6">
+                <dl>
+                  <dt>Name</dt>
+                  <dd>{character.name}</dd>
+                  <dt>Species</dt>
+                  <dd>{character.species}</dd>
+                  <dt>Gender</dt>
+                  <dd>{character.gender}</dd>
+                  <dt>Status</dt>
+                  <dd>{character.status}</dd>
+                </dl>
+              </div>
+              <div class="col">
+                <dl>           
+                  <dt>Origin</dt>
+                  <dd>{character.origin.name}</dd>
+                  <dt>Location</dt>
+                  <dd>
+                    <NavLink to={"/location/" + characterLocationId} className="link-info">{character.location.name}<i className="fa fa-external-link"></i></NavLink>
+                  </dd>                  
+                </dl>
+              </div>
+            </div>
           </div>
         </div>
       </div>

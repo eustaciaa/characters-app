@@ -26,7 +26,7 @@ class LocationResidents extends React.Component {
           locationName: location.name
         });
 
-        if (location.residents == []) {
+        if (location.residents.length === 0) {
           this.setState({
             DataisLoaded: true
           })
@@ -60,7 +60,7 @@ class LocationResidents extends React.Component {
         </div>
         <div class="row">
           {
-            residents.length != 0 ?
+            residents.length !== 0 ?
             residents.map((resident) => (
               <div class="p-3 col-md-3">
                 <Card type="character" item={resident}/>
