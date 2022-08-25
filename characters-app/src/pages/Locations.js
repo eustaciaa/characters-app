@@ -1,7 +1,7 @@
 import DataTable from 'react-data-table-component';
 import React from "react";
-import Card from "./Card";
-import LoadingText from './LoadingText';
+import Card from "../components/Card";
+import LoadingText from '../components/LoadingText';
 
 export default class Locations extends React.Component {
 

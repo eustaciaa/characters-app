@@ -1,6 +1,6 @@
 import React from "react"
 import { useLocation, useNavigate, useParams } from 'react-router-dom'
-import LoadingText from "./LoadingText";
+import LoadingText from "../components/LoadingText";
 
 class Character extends React.Component {
 
