@@ -42,7 +42,7 @@ class Character extends React.Component {
         </div>
         <div class="row">
           <div class="col-md-4">
-            <img src={character.image} class="d-block mx-auto mx-md-0" alt="character's image"/>
+            <img src={character.image} class="d-block mx-auto mx-md-0" alt={character.name}/>
           </div>
           <div class="col-md-8">
             <dl>

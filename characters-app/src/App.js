@@ -1,10 +1,10 @@
 import React from "react";
 import './App.css';
-import Navbar from './Navbar';
-import Locations from './pages/Locations';
+import Navbar from './components/Navbar';
+import Locations from './components/Locations';
 import { Route, Routes } from "react-router-dom"
-import Character from './pages/Character';
-import Characters from './pages/Characters';
+import Character from './components/Character';
+import Characters from './components/Characters';
 
 function App() {
   // return (
